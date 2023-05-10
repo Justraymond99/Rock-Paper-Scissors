@@ -1,0 +1,65 @@
+"This is the Rock, Paper, Scissors Championship Game!"
+"First to 3 points wins!"
+import random
+my_score = 0
+computer_score = 0
+computer_list = ['Rock', 'Paper', 'Scissors']
+
+while True:
+    i_got = input ('Give "Rock" for a Rock, "Paper" for a paper or "Scissors" for scissors: ')
+    computer_got = random.choice(computer_list)
+
+    if i_got == 'rock' and computer_got == 'Paper':
+        print('\n You picked rock and the computer chose paper. You lose! Computer has 1 point!\n')
+        computer_score += 1
+        print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+
+    elif i_got == 'Rock' and computer_got == 'Scissors':
+         print('\n You picked Rock and the computer chose Scissors. You win! You got 1 point!\n')
+         my_score += 1
+         print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+         
+    if i_got == 'Rock' and computer_got == 'rock':
+        print('\n You picked rock and the computer chose rock. Neither of you win! Neither of you get a point!\n')
+        computer_score += 0
+        print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+
+    elif  i_got == 'Scissors' and computer_got == 'Paper':
+        print('\n You picked Scissors and the computer chose paper. You win! You got 1 point!\n')
+        my_score += 1
+        print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+
+    if i_got == 'Scissors' and computer_got == 'Scissors':
+         print('\n You picked Scissors and the computer chose Scissors. Neither of you win! Neither of you get a point!\n')
+         my_score +=0
+         print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+         
+    if i_got == 'Scissors' and computer_got == 'Rock':
+        print('\n You picked Scissors and the computer chose Rock. You lose! Computer has 1 point!\n')
+        computer_score += 1
+        print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+
+    elif i_got == 'Paper' and computer_got == 'Scissors':
+        print('\n You picked paper and the computer chose scissors. You lose! Computer has 1 point!\n')
+        computer_score += 1
+        print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+
+    if i_got == 'Paper' and computer_got == 'Rock':
+         print('\n You picked Paper and the computer chose Rock. You win! You have 1 point!\n')
+         my_score += 1
+         print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+         
+    if i_got == 'Paper' and computer_got == 'Paper':
+        print('\n You picked paper and the computer chose paper. Neither of you win! Neither of you get a point!\n')
+        computer_score += 1
+        print('You have {} points and the computer has {} points'.format(my_score, computer_score))
+
+    if my_score == 3:
+        print ("You did it! You've won!")
+        break
+
+    elif computer_score == 3:
+        print ("You lose...try again next time!")
+        break
+
+print("GAME OVER... Try your luck next time!")
